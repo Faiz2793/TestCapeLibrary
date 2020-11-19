@@ -1,0 +1,13 @@
+USE [Library_Management_DB]
+GO
+/****** Object:  StoredProcedure [dbo].[spUpdateBookTransaction]    Script Date: 11/20/2020 4:03:18 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+/****** Object:  StoredProcedure [dbo].[spUpdateBookTransaction] Script Date: 11/20/2020 2:26:56 AM ******/
+
+ALTER PROCEDURE [dbo].[spUpdateBookTransaction] @BookId int,@UserId varchar(50)
+AS
+Insert into BookTransaction(BookId,UserId,PickedDate) 
+Values (@BookId,@UserId,SYSDATETIME())

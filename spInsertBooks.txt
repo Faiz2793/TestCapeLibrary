@@ -1,0 +1,9 @@
+USE [Library_Management_DB]
+GO
+/****** Object:  StoredProcedure [dbo].[SelectAllBooks]    Script Date: 11/20/2020 2:26:56 AM ******/
+
+Create PROCEDURE spInsertBook @BookName varchar(50),@AuthorId int,@PublisherId int
+AS
+Insert into Book(BookName,AuthorId,PublisherId,IsAvailable) 
+Values (@BookName,@AuthorId,@PublisherId,1)
+GO
